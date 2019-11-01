@@ -1,0 +1,10 @@
+ Volume in drive C is Acer
+ Volume Serial Number is BC2B-6769
+
+ Directory of C:\Users\aaqil\Desktop\MyProject
+
+11/02/2019  02:32 AM    <DIR>          .
+11/02/2019  02:32 AM    <DIR>          ..
+11/02/2019  02:32 AM                 0 test1.txt
+               1 File(s)              0 bytes
+               2 Dir(s)  225,770,934,272 bytes free
