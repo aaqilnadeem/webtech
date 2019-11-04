@@ -2,7 +2,7 @@
  $host="localhost";
  $dbuser="root";
  $dbpassword="";
- $dbname="web_technologies";
+ $dbname="bikeinventory";
   // Create connection
   $conn = new mysqli ($host, $dbuser, $dbpassword, $dbname);
 
@@ -12,12 +12,12 @@
        echo "Failed to connect to MySQL: " . mysqli_connect_error();
        }
 
-                  $name = $_POST['n'];
-                  $father = $_POST['fn'];
-                  $email = $_POST['em'];
-                  $mobile = $_POST['pn'];
-                  $sql = "INSERT INTO StudentInfo(stdname, fathername, email, mobileNo)
-                    Values ('$name','$father', '$email','$mobile')";
+                  $bike = $_POST['bike'];
+                  $ch = $_POST['chasisnum'];
+                  $eng = $_POST['enginenum'];
+                  $col = $_POST['color'];
+                  $sql = "INSERT INTO invent(bike, chasisnum, enginenum, color)
+                    Values ('$bike','$ch', '$eng','$col')";
                     $x=$conn->query($sql);
 
 if ( $x=TRUE )
@@ -25,37 +25,8 @@ if ( $x=TRUE )
 echo "New record is inserted successfully";
 }
 else{
-    echo "Error inserting record";
+    echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    $sql1 = "SELECT* FROM StudentInfo";
-        $result = $conn->query($sql1);
-        
-        if ($result->num_rows > 0) {
-           
-            echo "<table border=\"2\" style=\"border-collapse:collapse;\">";
-            echo "<tr>";
-                echo "<th>ID </th>";
-                echo "<th>Name</th>";
-                echo "<th>Father Name</th>";
-                echo "<th>Email</th>";
-                echo"<th>Gender</th>";
-                
-            echo "</tr>";
-            while($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . $row['stdID'] . "</td>";
-                echo "<td>" . $row['stdname'] . "</td>";
-                echo "<td>" . $row['fathername'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['mobileNo'] . "</td>";
-                
-            echo "</tr>";
-            }
-            echo "</table>";
-        } else {
-            echo "0 results";
-        }
-
-    $conn->close();
+    
 
 ?>

@@ -80,11 +80,22 @@ align-items: center;
 <div id="reg">
 <form method="POST" action="reg_db.php">
             <h3>Insert</h3>
-           <label > Name: </label><input type="text" name="n" ><br><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Father Name: <input type="text" name="fn"><br><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: <input type="text" name="em"><br><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone No.: <input type="text" name="pn"><br><br>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="submit" name="Enter" value="insert">
+            <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th>Bike ID</th>
+                        <td><input type="text" name="bike" placeholder="Honda,Yamaha" /></td>
+                    <tr>
+                        <th>Date</th>
+                        <td><input type='date' name="date" placeholder="1/2/3" /></td>
+                    </tr>
+                    <tr>
+                        <th>Owner</th>
+                        <td><input type="text" name="owner" placeholder="Name" /></td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit">Register</button></td>
+                    </tr>
+                </table>
         </form>
 </div>  
 </div>

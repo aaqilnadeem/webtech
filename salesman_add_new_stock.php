@@ -79,13 +79,41 @@ align-items: center;
 
 <div id="stock">
 <form method="POST" action="stock_db.php">
-            <h3>Insert</h3>
-           <label > Name: </label><input type="text" name="n" ><br><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Father Name: <input type="text" name="fn"><br><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: <input type="text" name="em"><br><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone No.: <input type="text" name="pn"><br><br>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="submit" name="Enter" value="insert">
-        </form>
+            <h3>ADD STOCK</h3>
+            <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th>Bike Brand</th>
+                        <td><input type="text" name="bike" placeholder="Honda,Yamaha" /></td>
+                    </tr>
+                    <tr>
+                        <th>Chasis Number</th>
+                        <td><input type="text" name="chasisnum" placeholder="1234567" /></td>
+                    </tr>
+                    <tr>
+                        <th>Engine Number</th>
+                        <td><input type="text" name="enginenum" placeholder="9876543" /></td>
+                    </tr>
+                    <tr>
+                        <th>Color</th>
+                        <td><input type="text" name="color" placeholder="Red,Black" /></td>
+                    </tr>
+                    <!-- <tr>
+                        <th>Sold</th>
+                        <td><input type="text" name="sold" placeholder="Yes,No" /></td>
+                    </tr> -->
+                    <!-- <tr>
+                        <th>Date</th>
+                        <td><input type='date' name="date" placeholder="1/2/3" /></td>
+                    </tr>
+                    <tr>
+                        <th>Owner</th>
+                        <td><input type="text" name="owner" placeholder="Name" /></td>
+                    </tr>-->
+                    <tr>
+                        <td><button type="submit">Register</button></td>
+                    </tr>
+                </table>
+                </form>
 </div>  
 </div>
 </body>

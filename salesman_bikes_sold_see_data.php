@@ -66,7 +66,7 @@ align-items: center;
   <li class="dropdown">
     <a>Inventory</a>
     <div class="dropdown-content">
-      <a href="#sold">Bikes Sold</a>
+      <a href="#sell">Bikes Sold</a>
       <!-- <a>
         <button>Bikes Sold</button> </a> -->
       <a href="salesman_new_bikes_see_data.php">New bikes</a>
@@ -78,12 +78,12 @@ align-items: center;
   <li><a href="#about">About</a></li>
 </ul>
 
-<div id="sold">
+<div id="sell">
 <?php
  $host="localhost";
  $dbuser="root";
  $dbpassword="";
- $dbname="web_technologies";
+ $dbname="bikeinventory";
   // Create connection
   $conn = new mysqli ($host, $dbuser, $dbpassword, $dbname);
 
@@ -92,28 +92,32 @@ align-items: center;
   {
        echo "Failed to connect to MySQL: " . mysqli_connect_error();
        }
-    $sql1 = "SELECT* FROM StudentInfo";
+    $sql1 = "SELECT* FROM invent WHERE sold='yes'";
         $result = $conn->query($sql1);
-        echo"By default you're in the bikes sold section";
+        
         if ($result->num_rows > 0) {
            
             echo "<table border=\"2\" style=\"border-collapse:collapse;\">";
             echo "<tr>";
                 echo "<th>ID </th>";
-                echo "<th>Name</th>";
-                echo "<th>Father Name</th>";
-                echo "<th>Email</th>";
-                echo"<th>Gender</th>";
-                
+                echo "<th>Bike</th>";
+                echo "<th>Chasis Num</th>";
+                echo "<th>Engine Num</th>";
+                echo"<th>Color</th>";
+                echo"<th>Sold</th>";
+                echo"<th>Date</th>";
+                echo"<th>Owner</th>";
             echo "</tr>";
             while($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>" . $row['stdID'] . "</td>";
-                echo "<td>" . $row['stdname'] . "</td>";
-                echo "<td>" . $row['fathername'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['mobileNo'] . "</td>";
-                
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['bike'] . "</td>";
+                echo "<td>" . $row['chasisnum'] . "</td>";
+                echo "<td>" . $row['enginenum'] . "</td>";
+                echo "<td>" . $row['color'] . "</td>";
+                echo "<td>" . $row['sold'] . "</td>";
+                echo "<td>" . $row['date'] . "</td>";
+                echo "<td>" . $row['owner'] . "</td>";
             echo "</tr>";
             }
             echo "</table>";
@@ -122,7 +126,8 @@ align-items: center;
         }
 
     $conn->close();
-    ?>
+
+?>
 </div>  
 </div>
 </body>
