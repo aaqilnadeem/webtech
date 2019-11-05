@@ -1,0 +1,7 @@
+Step 1: Create a database name "bikeinventory"
+Step 2: import tables of "invent.sql" and "amaw.sql" in newly created database
+Step 3: run "login.html" file
+Step 4: use username="admin" and Password="admin" to enter in owner home page 
+				OR
+	use username="sajid" and Password="sajid123" to enter in employee home page
+Step 5:now you can access every page of website
