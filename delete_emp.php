@@ -78,12 +78,7 @@ align-items: center;
 
 <div class="disp">
 <?php
- $host="localhost";
- $dbuser="root";
- $dbpassword="";
- $dbname="bikeinventory";
-  // Create connection
-  $conn = new mysqli ($host, $dbuser, $dbpassword, $dbname);
+require_once 'salesman_db_conn.php';
   // Check connection
         if (mysqli_connect_errno())
         {

@@ -1,11 +1,6 @@
 <?php
-$host = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "bikeinventory";
-// Create connection
-$conns = new mysqli ($host, $dbusername, $dbpassword, $dbname);
-// Check connection
+require_once 'salesman_db_conn.php';
+
 $username=$_POST["username"];
 $password=$_POST["password"];
 if (mysqli_connect_errno())
@@ -15,7 +10,7 @@ if (mysqli_connect_errno())
 
 
         $sql= "SELECT * FROM logindata WHERE username='$username' AND password='$password'";
-        $sqlr=mysqli_query($conns,$sql);
+        $sqlr=mysqli_query($conn,$sql);
         $datas=mysqli_fetch_array($sqlr);
         $idss=$datas['id'];
         if(mysqli_num_rows($sqlr)>0){

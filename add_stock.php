@@ -117,7 +117,7 @@ input[type=submit]:hover {
 </ul>
 
 <div class="disp">
-    <h1>Update</h1>
+    <h1>Add Stock</h1>
    
     <form action="stock_db.php" method="POST">
         <table>
