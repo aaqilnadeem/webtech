@@ -1,60 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-    .flex-container{
-        display: flex;
-        flex-flow: row wrap;
-    }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  height: 1000px;
-}
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-/* Change the link color on hover */
-li a:hover {
-  background-color: #555;
-  color: white;
-}
-li.dropdown {
-  display: block;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-.dropdown-content a:hover {background-color: #f1f1f1;}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.header{
-align-content: center;
-align-items: center;
- background-color:firebrick;
- height: 70px;
-  text-align: center;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="salesman.css">;
 </head>
 <body>
     <div class="header">
@@ -62,6 +9,7 @@ align-items: center;
     </div>
 <div class="flex-container">
 <ul>
+<li><a href="salesman_home.html">Home</a></li>
   <li class="dropdown">
     <a>Inventory</a>
     <div class="dropdown-content">
@@ -73,17 +21,53 @@ align-items: center;
       
     </div>
 <li><a href="#reg">Register New Bike</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
+
 </ul>
 
 <div id="reg">
+<?php
+require_once 'salesman_db_conn.php';
+
+    $sql1 = "SELECT* FROM invent WHERE sold=''";
+        $result = $conn->query($sql1);
+        
+        if ($result->num_rows > 0) {
+           
+            echo "<table border=\"2\" style=\"border-collapse:collapse;\">";
+            echo "<tr>";
+                echo "<th>ID </th>";
+                echo "<th>Bike</th>";
+                echo "<th>Chasis Num</th>";
+                echo "<th>Engine Num</th>";
+                echo"<th>Color</th>";
+                
+                
+            echo "</tr>";
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['bike'] . "</td>";
+                echo "<td>" . $row['chasisnum'] . "</td>";
+                echo "<td>" . $row['enginenum'] . "</td>";
+                echo "<td>" . $row['color'] . "</td>";
+                
+                
+            echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "0 results";
+        }
+
+    $conn->close();
+
+?>
 <form method="POST" action="reg_db.php">
-            <h3>Insert</h3>
+            <h3>Register New Bike</h3>
             <table cellspacing="0" cellpadding="0">
                     <tr>
                         <th>Bike ID</th>
-                        <td><input type="text" name="bike" placeholder="Honda,Yamaha" /></td>
+                        <td><input type='number' name="id" placeholder="1,2" /></td>
                     <tr>
                         <th>Date</th>
                         <td><input type='date' name="date" placeholder="1/2/3" /></td>

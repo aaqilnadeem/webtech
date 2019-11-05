@@ -1,16 +1,5 @@
 <?php
- $host="localhost";
- $dbuser="root";
- $dbpassword="";
- $dbname="bikeinventory";
-  // Create connection
-  $conn = new mysqli ($host, $dbuser, $dbpassword, $dbname);
-
-  // Check connection
-  if (mysqli_connect_errno())
-  {
-       echo "Failed to connect to MySQL: " . mysqli_connect_error();
-       }
+require_once 'salesman_db_conn.php';
 
                   $bike = $_POST['bike'];
                   $ch = $_POST['chasisnum'];
@@ -18,15 +7,13 @@
                   $col = $_POST['color'];
                   $sql = "INSERT INTO invent(bike, chasisnum, enginenum, color)
                     Values ('$bike','$ch', '$eng','$col')";
-                    $x=$conn->query($sql);
+                    // $x=$conn->query($sql);
 
-if ( $x=TRUE )
-{
-echo "New record is inserted successfully";
-}
-else{
-    echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+                    if ($conn->query($sql) === TRUE) {
+                      echo "New record created successfully";
+                  } else {
+                      echo "Error: " . $sql . "<br>" . $conn->error;
+                  }
     
 
 ?>

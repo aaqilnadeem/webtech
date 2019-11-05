@@ -1,60 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-    .flex-container{
-        display: flex;
-        flex-flow: row wrap;
-    }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  height: 1000px;
-}
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-/* Change the link color on hover */
-li a:hover {
-  background-color: #555;
-  color: white;
-}
-li.dropdown {
-  display: block;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-.dropdown-content a:hover {background-color: #f1f1f1;}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.header{
-align-content: center;
-align-items: center;
- background-color:firebrick;
- height: 70px;
-  text-align: center;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="salesman.css">;
 </head>
 <body>
     <div class="header">
@@ -62,6 +9,7 @@ align-items: center;
     </div>
 <div class="flex-container">
 <ul>
+<li><a href="salesman_home.html">Home</a></li>
   <li class="dropdown">
     <a>Inventory</a>
     <div class="dropdown-content">
@@ -73,8 +21,7 @@ align-items: center;
       
     </div>
 <li><a href="salesman_register_new_bike.php">Register New Bike</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
+
 </ul>
 
 <div id="stock">
@@ -97,18 +44,6 @@ align-items: center;
                         <th>Color</th>
                         <td><input type="text" name="color" placeholder="Red,Black" /></td>
                     </tr>
-                    <!-- <tr>
-                        <th>Sold</th>
-                        <td><input type="text" name="sold" placeholder="Yes,No" /></td>
-                    </tr> -->
-                    <!-- <tr>
-                        <th>Date</th>
-                        <td><input type='date' name="date" placeholder="1/2/3" /></td>
-                    </tr>
-                    <tr>
-                        <th>Owner</th>
-                        <td><input type="text" name="owner" placeholder="Name" /></td>
-                    </tr>-->
                     <tr>
                         <td><button type="submit">Register</button></td>
                     </tr>
